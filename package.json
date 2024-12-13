@@ -16,6 +16,10 @@
       {
         "command": "babylon.hello",
         "title": "Open Babylon Editor"
+      },
+      {
+        "command": "babylon.addBox",
+        "title": "Add Box"
       }
     ]
   },

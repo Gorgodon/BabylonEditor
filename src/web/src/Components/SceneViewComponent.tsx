@@ -1,14 +1,13 @@
 import { ArcRotateCamera, Engine, HemisphericLight, MeshBuilder, Scene, Vector3 } from "babylonjs";
-import React from "react";
+import React, { useEffect } from "react";
 
-const RENDER_CANVAS_ID = "renderCanvas";
+export function SceneViewComponent() {
 
-export class SceneViewComponent extends React.Component {
+    const RENDER_CANVAS_ID: string = "renderCanvas";
 
-    componentDidMount() {
-
+    useEffect(() => {
         const canvas = document.getElementById(RENDER_CANVAS_ID) as HTMLCanvasElement;
-        const engine = new Engine(canvas);
+        const engine = new Engine(canvas, true);
         const scene = new Scene(engine);
 
         const camera = new ArcRotateCamera("camera", -Math.PI / 2, Math.PI / 2.5, 3, new Vector3(0, 0, 0));
@@ -20,9 +19,24 @@ export class SceneViewComponent extends React.Component {
         scene.addMesh(box);
         scene.addLight(light);
         engine.runRenderLoop(() => { scene.render(); });
-    }
 
-    render() {
-        return <canvas id={RENDER_CANVAS_ID} style={{ width: "100%", height: "100%" }} />;
-    }
+        window.addEventListener("resize", () => { engine.resize(); });
+        window.addEventListener("beforeunload", () => { engine.dispose(); });
+        window.addEventListener("message", (event) => {
+            const message: string = event.data;
+            switch (message) {
+                case "AddBox":
+                    const newBox = MeshBuilder.CreateBox("box", {});
+                    newBox.position = new Vector3(Math.random() * 2 - 1, Math.random() * 2 - 1, Math.random() * 2 - 1);
+                    scene.addMesh(box);
+                    break;
+            }
+        });
+    });
+
+    return (
+        <div>
+            <canvas id={RENDER_CANVAS_ID} style={{ width: "100%", height: "100%" }}></canvas>
+        </div>
+    );
 }
