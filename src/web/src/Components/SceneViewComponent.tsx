@@ -28,7 +28,8 @@ export function SceneViewComponent() {
                 case "AddBox":
                     const newBox = MeshBuilder.CreateBox("box", {});
                     newBox.position = new Vector3(Math.random() * 2 - 1, Math.random() * 2 - 1, Math.random() * 2 - 1);
-                    scene.addMesh(box);
+                    scene.addMesh(newBox);
+                    testFunction({ test: "test" ,number: 1 });
                     break;
             }
         });
@@ -39,4 +40,11 @@ export function SceneViewComponent() {
             <canvas id={RENDER_CANVAS_ID} style={{ width: "100%", height: "100%" }}></canvas>
         </div>
     );
+}
+
+
+import { TestType } from "@modules/frontend/Engine/Types.js";
+
+export function testFunction(Types: TestType) {
+  console.log(Types);
 }
