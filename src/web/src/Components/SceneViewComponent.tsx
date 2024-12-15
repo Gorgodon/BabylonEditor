@@ -16,8 +16,12 @@ export function SceneViewComponent() {
         const light = new HemisphericLight("light", new Vector3(0, 1, 0));
 
         const box = MeshBuilder.CreateBox("box", {});
+        box.position = new Vector3(0, 1, 0);
         scene.addMesh(box);
         scene.addLight(light);
+
+        const ground = MeshBuilder.CreateGround("ground", { width: 6, height: 6 });
+        scene.addMesh(ground);
         engine.runRenderLoop(() => { scene.render(); });
 
         window.addEventListener("resize", () => { engine.resize(); });
