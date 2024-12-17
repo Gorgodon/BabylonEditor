@@ -1,6 +1,5 @@
 import * as vscode from 'vscode';
-import { Console } from './modules/Logging';
-import { WebConsole } from './modules/Logging';
+import * as Console from './modules/logging/Console';
 
 export function activate(context: vscode.ExtensionContext) {
   let currentPanel: vscode.WebviewPanel | undefined = undefined;
@@ -11,7 +10,6 @@ export function activate(context: vscode.ExtensionContext) {
     currentPanel = vscode.window.createWebviewPanel("webview", "React", vscode.ViewColumn.One, {
       enableScripts: true
     });
-    WebConsole.InitializeWebConsole(currentPanel.webview);
 
     // web is for my react root directory, rename for yours
 
