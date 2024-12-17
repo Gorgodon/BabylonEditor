@@ -1,1 +1,0 @@
-export { WebLog } from "./types";
