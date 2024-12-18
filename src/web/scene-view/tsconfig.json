@@ -23,7 +23,7 @@
 	"exclude": ["node_modules", ".parcel-cache", "dist"],
 	"references": [
 		{
-			"path": "../../modules/frontend/logging"
+			"path": "../../libs/frontend/logging"
 		}
 	]
 }

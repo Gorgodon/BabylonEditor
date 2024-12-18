@@ -1,6 +1,6 @@
 import * as vscode from 'vscode';
-import { Console } from '../modules/backend/logging';
-import { WebConsole } from '../modules/backend/logging';
+import { Console } from '../libs/backend/logging';
+import { WebConsole } from '../libs/backend/logging';
 
 export function activate(context: vscode.ExtensionContext) {
   let currentPanel: vscode.WebviewPanel | undefined = undefined;

@@ -5,13 +5,13 @@
 	},
 	"references": [
 		{
-			"path": "../modules/common/logging",
+			"path": "../libs/common/logging",
 		},
 		{
-			"path": "../modules/backend/logging"
+			"path": "../libs/backend/logging"
 		},
 		{
-			"path": "../modules/common/messaging"
+			"path": "../libs/common/messaging"
 		}
 	]
 }

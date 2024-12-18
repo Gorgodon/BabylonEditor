@@ -1,7 +1,7 @@
 import React from "react";
 
 import { SceneViewComponent } from "./Components/SceneViewComponent";
-import { Console } from "../../../modules/frontend/logging";
+import { Console } from "../../../libs/frontend/logging";
 
 function App() {
   return (
