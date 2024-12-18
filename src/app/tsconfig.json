@@ -11,7 +11,7 @@
 			"path": "../libs/backend/logging"
 		},
 		{
-			"path": "../libs/common/messaging"
+			"path": "../modules/scene-module/backend"
 		}
 	]
 }

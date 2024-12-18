@@ -24,6 +24,9 @@
 	"references": [
 		{
 			"path": "../../libs/frontend/logging"
+		},
+		{
+			"path": "../../modules/scene-module/frontend"
 		}
 	]
 }
