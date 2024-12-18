@@ -1,7 +1,7 @@
 import { Webview } from 'vscode';
-import { Message } from '@modules/common/engine';
-import { WebLog } from './Types';
-import * as Console from './Console';
+import { Message } from '../../../common/messaging';
+import { WebLog } from '../../../common/logging';
+import * as Console from './console';
 
 export function InitializeWebConsole(webview: Webview): void {
     Console.Info("Initializing Web Console");

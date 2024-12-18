@@ -1,0 +1,17 @@
+{
+	"extends": "../../tsconfig.json",
+	"compilerOptions": {
+		"baseUrl": "./",
+	},
+	"references": [
+		{
+			"path": "../modules/common/logging",
+		},
+		{
+			"path": "../modules/backend/logging"
+		},
+		{
+			"path": "../modules/common/messaging"
+		}
+	]
+}

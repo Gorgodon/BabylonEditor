@@ -7,9 +7,6 @@
 			"ES2022"
 		],
 		"sourceMap": true,
-		"rootDir": "src",
-	},
-	"exclude": [
-		"src/web"
-	]
+		"composite": true,
+	}
 }

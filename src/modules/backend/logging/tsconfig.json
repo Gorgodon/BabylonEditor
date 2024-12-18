@@ -7,9 +7,14 @@
 			"ES2022"
 		],
 		"sourceMap": true,
-		"rootDir": "src",
+		"composite": true,
 	},
-	"exclude": [
-		"src/web"
+	"references": [
+		{
+			"path": "../../common/logging"
+		},
+		{
+			"path": "../../common/messaging"
+		}
 	]
 }

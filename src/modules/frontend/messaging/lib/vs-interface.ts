@@ -1,10 +1,10 @@
-import { Message } from "@modules/common/engine/index.js";
+import { Message } from "../../../common/messaging";
 
 interface vscode {
     postMessage(message: any): void;
 }
 
-const vscode: vscode = (window as any).acquireVsCodeApi() as vscode;
+declare const vscode: vscode /*= (window as any).acquireVsCodeApi() as vscode*/;
 
 export function PostMessage(message: Message): void {
     vscode.postMessage(message);

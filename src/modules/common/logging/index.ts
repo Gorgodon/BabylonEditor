@@ -1,0 +1,1 @@
+export { WebLog } from './lib/types';

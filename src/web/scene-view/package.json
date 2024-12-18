@@ -1,5 +1,5 @@
 {
-  "name": "web",
+  "name": "scene-view",
   "version": "0.1.0",
   "private": true,
   "type": "module",
@@ -12,7 +12,7 @@
   },
   "source": "src/index.tsx",
   "scripts": {
-    "start": "parcel",
+    "start": "parcel --dist-dir ../../../out/web/scene-view",
     "build": "parcel build",
     "test": "react-scripts test",
     "eject": "react-scripts eject"
