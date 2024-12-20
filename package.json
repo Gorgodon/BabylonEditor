@@ -12,14 +12,40 @@
   "activationEvents": [],
   "main": "./out/app/extension.js",
   "contributes": {
+    "menus": {
+      "webview/context": [
+        {
+          "command": "babylon.scene.context.add.box",
+          "when": "webviewId == 'sceneView'"
+        },
+        {
+          "command": "babylon.scene.context.add.sphere",
+          "when": "webviewId == 'sceneView'"
+        }
+      ],
+      "commandPalette": [
+        {
+          "command": "babylon.scene.context.add.box",
+          "when": "false"
+        },
+        {
+          "command": "babylon.scene.context.add.sphere",
+          "when": "false"
+        }
+      ]
+    },
     "commands": [
       {
-        "command": "babylon.hello",
+        "command": "babylon.scene.view",
         "title": "Open Babylon Editor"
       },
       {
-        "command": "babylon.addBox",
-        "title": "Add Box"
+        "command": "babylon.scene.context.add.box",
+        "title": "Add Cube"
+      },
+      {
+        "command": "babylon.scene.context.add.sphere",
+        "title": "Add Sphere"
       }
     ]
   },

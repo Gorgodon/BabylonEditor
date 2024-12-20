@@ -1,4 +1,6 @@
+export type MessageCommand = "console" | "scene";
+
 export interface Message {
-    command: "console";
+    command: MessageCommand;
     payload?: any;
 }

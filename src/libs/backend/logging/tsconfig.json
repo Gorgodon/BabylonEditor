@@ -15,6 +15,9 @@
 		},
 		{
 			"path": "../../common/messaging"
+		},
+		{
+			"path": "../../backend/messaging"
 		}
 	]
 }

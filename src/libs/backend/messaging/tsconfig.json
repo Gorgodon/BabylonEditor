@@ -11,13 +11,7 @@
 	},
 	"references": [
 		{
-			"path": "../../../libs/backend/logging"
-		},
-		{
-			"path": "../common"
-		},
-		{
-			"path": "../../../libs/backend/messaging"
+			"path": "../../common/messaging"
 		}
 	]
 }

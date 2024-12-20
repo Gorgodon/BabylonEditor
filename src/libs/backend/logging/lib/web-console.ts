@@ -1,29 +1,23 @@
 import { Webview } from 'vscode';
-import { Message } from '../../../common/messaging';
 import { WebLog } from '../../../common/logging';
 import * as Console from './console';
+import { Register } from '../../messaging';
 
 export function InitializeWebConsole(webview: Webview): void {
     Console.Info("Initializing Web Console");
-    webview.onDidReceiveMessage((message) => {
-        LogWebMessage(message);
-    });
+    Register<WebLog>(webview, "console", LogWebMessage);
 }
 
-function LogWebMessage(message: Message): void {
-    if (message.command !== "console") {
-        return;
-    }
-    const payload = message.payload as WebLog;
-    switch (payload.type) {
+function LogWebMessage(message: WebLog): void {
+    switch (message.type) {
         case "log":
-            Console.Info(payload.message);
+            Console.Info(message.message);
             break;
         case "error":
-            Console.Error(payload.message);
+            Console.Error(message.message);
             break;
         case "warn":
-            Console.Warning(payload.message);
+            Console.Warning(message.message);
             break;
     }
 }

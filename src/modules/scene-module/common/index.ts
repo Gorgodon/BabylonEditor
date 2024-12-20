@@ -1,0 +1,1 @@
+export { SceneCommand } from "./lib/scene-add-command";

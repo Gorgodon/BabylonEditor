@@ -26,7 +26,10 @@
 			"path": "../../libs/frontend/logging"
 		},
 		{
-			"path": "../../modules/scene-module/frontend"
+			"path": "../../libs/frontend/messaging"
+		},
+		{
+			"path": "../../modules/scene-module/common"
 		}
 	]
 }
